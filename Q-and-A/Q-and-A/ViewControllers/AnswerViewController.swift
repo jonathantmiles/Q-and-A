@@ -12,8 +12,9 @@ class AnswerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        updateViews()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +23,23 @@ class AnswerViewController: UIViewController {
     }
     
 
+    @IBAction func submitAnswer(_ sender: Any) {
+        guard let answerer = answererField.text,
+            let answer = answerTextView.text,
+            let question = question else { return }
+        if answerer != "" && answer != "" {
+            questionController?.updateQuestion(toAnswer: question, with: answer, from: answerer)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func updateViews() {
+        askerLabel.text = question?.asker
+        questionLabel.text = question?.question
+        answererField.text = question?.answerer
+        answerTextView.text = question?.answer
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -32,4 +50,15 @@ class AnswerViewController: UIViewController {
     }
     */
 
+    // MARK: - Properties
+    
+    var questionController: QuestionController?
+    var question: Question?
+    
+    @IBOutlet weak var askerLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answererField: UITextField!
+    @IBOutlet weak var answerTextView: UITextView!
+    
+    
 }

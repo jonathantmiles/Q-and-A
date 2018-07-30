@@ -26,6 +26,7 @@ class AskQuestionViewController: UIViewController {
             let question = questionTextView.text else { return }
         if asker != "" && question != "" {
             questionController?.createQuestion(about: question, from: asker)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -34,6 +35,7 @@ class AskQuestionViewController: UIViewController {
     var questionController: QuestionController?
     @IBOutlet weak var askerTextField: UITextField!
     @IBOutlet weak var questionTextView: UITextView!
+    
     /*
     // MARK: - Navigation
 

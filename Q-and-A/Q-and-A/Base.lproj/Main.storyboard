@@ -37,7 +37,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYj-VM-mgy">
-                                        <rect key="frame" x="0.0" y="75.5" width="93.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="75.5" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -52,6 +52,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="mYj-VM-mgy" firstAttribute="height" secondItem="em5-zl-Ggx" secondAttribute="height" id="0gr-OQ-9Mo"/>
+                                    <constraint firstAttribute="trailing" secondItem="mYj-VM-mgy" secondAttribute="trailing" constant="16" id="1Zq-BH-cqC"/>
                                     <constraint firstItem="U9c-hP-t2g" firstAttribute="height" secondItem="em5-zl-Ggx" secondAttribute="height" id="bTH-uK-fEj"/>
                                 </constraints>
                             </stackView>
@@ -66,8 +67,18 @@
                         <viewLayoutGuide key="safeArea" id="uNH-T5-Qfm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Answer" id="Pf4-AQ-LGc">
-                        <barButtonItem key="rightBarButtonItem" title="Submit Answer" id="yaR-2j-Wo7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit Answer" id="yaR-2j-Wo7">
+                            <connections>
+                                <action selector="submitAnswer:" destination="TIm-v4-Jwe" id="Z0u-vB-suT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerTextView" destination="GfG-UK-Tu8" id="JQ9-Kd-9JQ"/>
+                        <outlet property="answererField" destination="mYj-VM-mgy" id="wGv-WA-tUJ"/>
+                        <outlet property="askerLabel" destination="U9c-hP-t2g" id="egU-BV-8yR"/>
+                        <outlet property="questionLabel" destination="em5-zl-Ggx" id="62e-aV-btO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65H-aJ-6dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,7 +167,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Q&amp;A" id="rcG-U6-FdH">
-                        <barButtonItem key="rightBarButtonItem" title="Submit Question" id="ua2-mm-9nA">
+                        <barButtonItem key="rightBarButtonItem" title="Ask Question" id="ua2-mm-9nA">
                             <connections>
                                 <segue destination="TJd-tK-BYm" kind="show" identifier="AskQuestionSegue" id="u2J-0Z-mco"/>
                             </connections>
