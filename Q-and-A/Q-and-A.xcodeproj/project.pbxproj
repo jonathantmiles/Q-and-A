@@ -15,6 +15,7 @@
 		F8726238210F9D6D00EC99A4 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8726237210F9D6D00EC99A4 /* QuestionController.swift */; };
 		F872623B210FA29700EC99A4 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F872623A210FA29700EC99A4 /* QuestionsTableViewController.swift */; };
 		F872623D210FA2C300EC99A4 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F872623C210FA2C300EC99A4 /* QuestionTableViewCell.swift */; };
+		F872623F210FB5E500EC99A4 /* AskQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F872623E210FB5E500EC99A4 /* AskQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F8726237210F9D6D00EC99A4 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		F872623A210FA29700EC99A4 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		F872623C210FA2C300EC99A4 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		F872623E210FB5E500EC99A4 /* AskQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				F872623A210FA29700EC99A4 /* QuestionsTableViewController.swift */,
 				F872623C210FA2C300EC99A4 /* QuestionTableViewCell.swift */,
+				F872623E210FB5E500EC99A4 /* AskQuestionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				F8726236210F9C5E00EC99A4 /* Question.swift in Sources */,
 				F872623D210FA2C300EC99A4 /* QuestionTableViewCell.swift in Sources */,
+				F872623F210FB5E500EC99A4 /* AskQuestionViewController.swift in Sources */,
 				F8726224210F9C2F00EC99A4 /* AppDelegate.swift in Sources */,
 				F8726238210F9D6D00EC99A4 /* QuestionController.swift in Sources */,
 				F872623B210FA29700EC99A4 /* QuestionsTableViewController.swift in Sources */,
