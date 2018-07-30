@@ -16,7 +16,7 @@
         <!--Answer-->
         <scene sceneID="4zU-tc-PFo">
             <objects>
-                <viewController id="TIm-v4-Jwe" sceneMemberID="viewController">
+                <viewController id="TIm-v4-Jwe" customClass="AnswerViewController" customModule="Q_and_A" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ofg-zp-5oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
