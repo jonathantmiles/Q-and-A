@@ -46,8 +46,17 @@ class QuestionsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AskQuestionSegue" {
+            guard let detailVC = segue.destination as? AskQuestionViewController else { return }
+            detailVC.questionController = questionController
+            
+        } else if segue.identifier == "AnswerQuestionSegue" {
+            guard let detailVC = segue.destination as? AnswerViewController else { return }
+            detailVC.questionController = questionController
+            guard let index = tableView.indexPathForSelectedRow?.row else { return }
+            detailVC.question = questionController.questions[index]
+            
+        }
     }
     
     
