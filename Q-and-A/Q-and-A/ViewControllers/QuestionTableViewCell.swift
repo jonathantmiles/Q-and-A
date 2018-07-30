@@ -20,6 +20,21 @@ class QuestionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    private func updateViews() {
+        guard let question = question else { return }
+        questionLabel.text = question.question
+        askedByLabel.text = question.asker
+    }
+    
+    // MARK: - Properties
+    
+    var question: Question? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var askedByLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
