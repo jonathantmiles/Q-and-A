@@ -25,6 +25,7 @@ class QuestionTableViewCell: UITableViewCell {
         guard let question = question else { return }
         questionLabel.text = question.question
         askedByLabel.text = question.asker
+        thirdLabel.text = "Tap here to answer."
     }
     
     // MARK: - Properties
@@ -38,5 +39,7 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var askedByLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
+    
+    
     
 }

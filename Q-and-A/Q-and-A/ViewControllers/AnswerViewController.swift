@@ -13,8 +13,10 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateViews()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // updateViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +35,15 @@ class AnswerViewController: UIViewController {
         }
     }
     
-    func updateViews() {
-        askerLabel.text = question?.asker
-        questionLabel.text = question?.question
-        answererField.text = question?.answerer
-        answerTextView.text = question?.answer
+    private func updateViews() {
+        guard let asker = question?.asker,
+            let questionText = question?.question,
+            let answerer = question?.answerer,
+            let answer = question?.answer else { return }
+        askerLabel.text = asker
+        questionLabel.text = questionText
+        answererField.text = answerer
+        answerTextView.text = answer
     }
     
     /*
@@ -53,7 +59,11 @@ class AnswerViewController: UIViewController {
     // MARK: - Properties
     
     var questionController: QuestionController?
-    var question: Question?
+    var question: Question? {
+        didSet {
+            updateViews()
+        }
+    }
     
     @IBOutlet weak var askerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
