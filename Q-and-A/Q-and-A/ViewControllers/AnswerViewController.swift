@@ -16,7 +16,7 @@ class AnswerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // updateViews()
+        updateViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,24 +26,26 @@ class AnswerViewController: UIViewController {
     
 
     @IBAction func submitAnswer(_ sender: Any) {
-        guard let answerer = answererField.text,
-            let answer = answerTextView.text,
-            let question = question else { return }
+        guard let question = question,
+            let answerer = answererField.text,
+            let answer = answerTextView.text else { return }
         if answerer != "" && answer != "" {
             questionController?.updateQuestion(toAnswer: question, with: answer, from: answerer)
+            //print(questionController?.questions.count)
             self.navigationController?.popViewController(animated: true)
         }
     }
     
     private func updateViews() {
-        guard let asker = question?.asker,
-            let questionText = question?.question,
-            let answerer = question?.answerer,
-            let answer = question?.answer else { return }
-        askerLabel.text = asker
-        questionLabel.text = questionText
-        answererField.text = answerer
-        answerTextView.text = answer
+        guard let question = question else { return }
+//            asker = question?.asker,
+//            let questionText = question?.question,
+//            let answerer = question?.answerer,
+//            let answer = question?.answer else { return }
+        askerLabel.text = question.asker
+        questionLabel.text = question.question
+        answererField.text = question.answerer
+        answerTextView.text = question.answer
     }
     
     /*
@@ -61,7 +63,7 @@ class AnswerViewController: UIViewController {
     var questionController: QuestionController?
     var question: Question? {
         didSet {
-            updateViews()
+            //updateViews()
         }
     }
     

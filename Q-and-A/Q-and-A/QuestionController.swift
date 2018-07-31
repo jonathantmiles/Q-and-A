@@ -22,8 +22,11 @@ class QuestionController {
     // Update function to "answer" the question
     func updateQuestion(toAnswer question: Question, with answer: String, from answerer: String) {
         var question = question
+        guard let index = questions.index(of: question) else { return }
         question.answer = answer
         question.answerer = answerer
+        questions.remove(at: index)
+        questions.insert(question, at: index)
     }
     
     // Delete function

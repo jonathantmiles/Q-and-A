@@ -53,8 +53,8 @@ class QuestionsTableViewController: UITableViewController {
         } else if segue.identifier == "AnswerQuestionSegue" {
             guard let detailVC = segue.destination as? AnswerViewController else { return }
             detailVC.questionController = questionController
-            guard let index = tableView.indexPathForSelectedRow?.row else { return }
-            detailVC.question = questionController.questions[index]
+            guard let index = tableView.indexPathForSelectedRow else { return }
+            detailVC.question = questionController.questions[index.row]
             
         }
     }
